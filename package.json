@@ -1,0 +1,17 @@
+{
+  "name": "prismic",
+  "version": "1.0.0",
+  "description": "Testando um headless CMS",
+  "main": "index.js",
+  "dependencies": {
+    "prismic-dom": "^2.0.6",
+    "prismic-javascript": "^1.5.0-beta.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
