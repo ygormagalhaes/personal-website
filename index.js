@@ -24,19 +24,46 @@ window.onload = function() {
 function renderizaPost(blogPost) {
   console.log(blogPost);
 
-  let titulo = $('<h1>');
+  let linhaTitulo = $('<div>');
+  linhaTitulo.addClass('row');
+
+  let colTitulo = $('<div>');
+  colTitulo.addClass('col-md-12');
+
+  let titulo = $('<h3>');
   titulo.text(blogPost.titulo[0].text);
 
-  let corpo = $('<p>');
-  corpo.text(blogPost.texto[0].text);
+  colTitulo.append(titulo);
+  linhaTitulo.append(colTitulo);
 
+
+  let linhaCorpo = $('<div>');
+  linhaCorpo.addClass('row');
+
+  let col1 = $('<div>');
+  col1.addClass('col-md-4');
 
   let imagem = $('<img>');
   if (typeof blogPost.imgprincipal != undefined) {
     imagem.attr('src', blogPost.imgprincipal.url);
+    imagem.css('width', '100%');
   }
 
-  $('body').append(titulo);
-  $('body').append(corpo);
-  $('body').append(imagem);
+  col1.append(imagem);
+
+  let col2 = $('<div>');
+  col2.addClass('col-md-8');
+
+  let corpo = $('<p>');
+  corpo.text(blogPost.texto[0].text);
+
+  col2.append(corpo);
+
+  linhaCorpo.append(col1);
+  linhaCorpo.append(col2);
+
+
+  $('#corpo').append(linhaTitulo);
+  $('#corpo').append(linhaCorpo);
+  $('#corpo').append($('<hr>'));
 }
